@@ -6,7 +6,7 @@ const { load } = require('dotenv');
 
 router.get('/', async (req, res) => {
   const users = await User.findAll({
-  
+    attributes: ['user_name','id', 'island_code'],
   });
   res.send(
     JSON.stringify(users, null, 2)
@@ -18,6 +18,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Products
   const user_id = req.params.id
   const user = await User.findAll({
+    attributes: ['user_name','id', 'island_code'],
     where: {
       id: user_id
     },

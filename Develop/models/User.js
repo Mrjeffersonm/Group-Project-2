@@ -22,6 +22,10 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    island_code: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,

@@ -27,7 +27,9 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-      const createItem = await Item.create(req.body)
+      const user_id = req.session.user.id;
+      const item = {...req.body, user_id: user_id}
+      const createItem = await Item.create(item)
       res.send(
         JSON.stringify(createItem, null, 2)
       )

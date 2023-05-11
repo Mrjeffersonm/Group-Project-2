@@ -1,10 +1,7 @@
 //replace the modes/index.js file with this file
 
 // import models
-const Product = require('./Product');
 const User = require('./User');
-const Tag = require('./Tag');
-const ProductTag = require('./ProductTag');
 const Item = require('./Item.js')
 
 // // Products belongsTo Category
@@ -27,10 +24,13 @@ const Item = require('./Item.js')
 //   foreignKey: 'tag_id',
 // });
 
+User.hasMany(Item);
+
+Item.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
 module.exports = {
-  Product,
   User,
-  Tag,
-  ProductTag,
   Item,
 };
