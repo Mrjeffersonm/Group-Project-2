@@ -112,3 +112,24 @@ function newAccount(user, pass, island) {
     })
 }
 
+function showCreate() {
+    $('#loginForm').addClass('hidden')
+    $('#createAccount').removeClass('hidden')
+    $('#loginButton').removeClass('hidden')
+    $('#createAccountButton').addClass('hidden')
+}
+
+function showLogin() {
+    $('.showLoginElements').removeClass('hidden')
+    $('.showCreateElements').addClass('hidden')
+}
+
+function showItemSearch() {
+    $('.showSearchElements').removeClass('hidden')
+    $('.showAddItemElements').addClass('hidden')
+}
+
+function showAddItem() {
+    $('.showSearchElements').addClass('hidden')
+    $('.showAddItemElements').removeClass('hidden')
+}
