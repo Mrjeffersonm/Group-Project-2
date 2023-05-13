@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/x-handlebars-template" id="itemListTemplate">
+        {{#each this}}
+            <div>{{this.item_name}}</div>
+            <div>{{this.user.user_name}}</div>
+            <div>{{this.user.island_code}}</div>
+        {{/each}}
+    </script>
+    hello
+    <div id="itemSearch">
+        <input id="itemSearchInput"></input>
+        <button onclick="onItemSearch()">Find Item</button>
+        <div id="itemList"></div>
+    </div>
+    <div id="itemAdd">
+        <input id="itemAddInput"></input>
+        <button onclick="onItemAdd()">Add Item</button>
+        <div id="addItemResult"></div>
+    </div>
+    <button onclick="logout()">logout</button>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>

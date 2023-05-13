@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const loginController = require('../../controllers/login-controller');
 
 router.get('/', (req, res) => {
-    req.session.destroy();
-    res.send(JSON.stringify({}))
+    loginController.logout(req, res)
 });
 
 module.exports = router;
